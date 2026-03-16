@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentimeter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .header {
+      width: 100%;
+      background: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 20px;
+      gap: 10px;
+    }
+
+    .btn-outline {
+      padding: 8px 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .btn-dark {
+      padding: 8px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #2f3e2f;
+      color: white;
+      cursor: pointer;
+    }
+
+    .logo-text {
+      font-style: italic;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      color: #2f3e2f;
+      transition: 0.3s;
+    }
+
+    /* subtle hover effect */
+    .logo-text:hover {
+      color: #4f6b4f;
+    }
+
+    .hero {
+      height: 100vh;
+      background-image: url('aboutus.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 40px;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .hero h4 {
+      font-size: 60px;
+      line-height: 0.9;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .video-container {
+      margin: 20px auto;
+      max-width: 700px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .visit-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .visit-btn:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .video-controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .video-controls button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background: #2f3e2f;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .video-controls button:hover {
+      background: #4f6b4f;
+    }
+
+    /* Hero title row: logo + h4 aligned horizontally */
+    .title-row {
+      display: flex;
+      align-items: center;
+      /* vertical alignment */
+      justify-content: center;
+      /* horizontal centering on page */
+      gap: 12px;
+      /* space between logo and text */
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      /* vertical alignment */
+      justify-content: center;
+      /* center horizontally */
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .hero-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 12px;
+      /* makes the sides slightly rounded */
+    }
+
+    .title-row h4 {
+      font-size: 60px;
+      line-height: 1;
+      /* remove extra vertical spacing */
+      margin: 0;
+      /* remove default margin */
+    }
+
+    /* MOBILE NAVIGATION LAYOUT */
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header class="header">
+    <nav class="nav">
+
+      <div class="logo">
+        <span class="logo-text">ICTechGuide</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <br>
+  <br>
+  <br>
+  <section class="hero">
+    <div class="title-row">
+      <img src="mentimeterlogo.jpg" alt="Mentimeter Logo" class="hero-logo">
+      <h4>Mentimeter</h4>
+    </div>
+    <p>Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.</p>
+    <h1>Introduction</h1>
+    </p>
+    <div class="video-container">
+      <iframe src="https://player.vimeo.com/video/1171461454?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        width="400" height="300" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" title="MENTIMETER"></iframe>
+
+  </section>
+
+  <section class="hero">
+    <div class="title-row">
+      <h1><br>Features</h1>
+    </div>
+    <div class="video-container">
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1173478042?h=0bcfbf58af" width="640" height="360"
+        frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+  </section>
+  <section class="hero">
+    <div class="title-row">
+      <h1><br>Creating a Game (Word Cloud)</h1>
+    </div>
+    <div class="video-container">
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1173478010?h=204bf0a120" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+    </div>
+  </section>
+ 
+  <section class="hero">
+    <div class="title-row">
+      <h1><br>Creating a Game (Open Ended)</h1>
+    </div>
+    <div class="video-container">
+     <iframe title="vimeo-player" src="https://player.vimeo.com/video/1173477989?h=9ee5b43579" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="title-row">
+      <h1><br>Creating a Game <br>(Q&A, Ranking, Scales)</h1>
+    </div>
+    <div class="video-container">
+    <iframe title="vimeo-player" src="https://player.vimeo.com/video/1173477942?h=b59c12f705" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+    </div>
+     <a class="visit-btn" href="https://www.mentimeter.com/app/home" target="_blank">Visit Mentimeter</a>
+  </section>
+
+ 
+</body>
+
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICTechGuide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff;
+}
+
+.header{
+width:100%;
+background:white;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+padding:15px 40px;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.nav-actions{
+display:flex;
+gap:10px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+font-weight:600;
+font-size:20px;
+gap:10px;
+}
+
+.btn-outline{
+padding:8px 18px;
+border:1px solid #ccc;
+border-radius:8px;
+background:white;
+cursor:pointer;
+}
+
+.btn-dark{
+padding:8px 18px;
+border:none;
+border-radius:8px;
+background:#2f3e2f;
+color:white;
+cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+height:100vh;
+background-image:url('bg.gif');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+.hero-content{
+position:relative;
+color:white;
+max-width:650px;
+margin-left:80px;
+}
+
+.location{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:90px;
+line-height:0.9;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:16px;
+opacity:0.9;
+margin-bottom:25px;
+}
+
+.explore-btn{
+background:white;
+color:black;
+padding:14px 30px;
+border:none;
+border-radius:10px;
+font-weight:500;
+cursor:pointer;
+}
+
+
+/* SEARCH BAR */
+
+.search-bar{
+position:absolute;
+top:100px;
+left:50%;
+transform:translateX(-50%);
+background:white;
+padding:12px 20px;
+border-radius:40px;
+width:460px;
+display:flex;
+align-items:center;
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+border:1px solid rgba(0,0,0,0.05);
+}
+
+/* SELECT DROPDOWN */
+
+.search-bar select{
+border:none;
+outline:none;
+width:100%;
+font-size:15px;
+background:white;
+cursor:pointer;
+padding:10px 14px;
+border-radius:40px;
+color:#333;
+font-weight:500;
+appearance:none;
+background-image:url("data:image/svg+xml;utf8,<svg fill='%23666' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5.25 7.5L10 12.25L14.75 7.5'/></svg>");
+background-repeat:no-repeat;
+background-position:right 10px center;
+background-size:18px;
+}
+
+/* subtle hover */
+
+.search-bar select:hover{
+background-color:#f7f7f7;
+}
+
+/* focus effect */
+
+.search-bar select:focus{
+background-color:#f9f9f9;
+}
+
+
+
+/* DESTINATION CARDS */
+
+.cards{
+position:absolute;
+bottom:40px;
+right:60px;
+display:flex;
+gap:20px;
+}
+
+.card{
+width:170px;
+height:220px;
+border-radius:16px;
+overflow:hidden;
+position:relative;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.card-info{
+position:absolute;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+color:white;
+font-size:14px;
+text-align:center;
+}
+
+.card-info h4{
+font-size:18px;
+color:#111F35;
+}
+.cards{
+position:absolute;
+bottom:40px;
+right:60px;
+width:540px; /* desktop shows 3 cards */
+overflow:hidden;
+}
+
+.cards-track{
+display:flex;
+gap:20px;
+width:max-content;
+animation:slideCards 25s linear infinite;
+}
+
+.card{
+flex:0 0 calc(33.333% - 14px); /* 3 cards */
+height:220px;
+border-radius:16px;
+overflow:hidden;
+position:relative;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+@keyframes slideCards{
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+}
+.logo-text{
+font-style: italic;
+font-weight: 600;
+font-size: 22px;
+letter-spacing: 1.5px;
+color: #2f3e2f;
+transition: 0.3s;
+}
+
+/* subtle hover effect */
+.logo-text:hover{
+color: #4f6b4f;
+}
+/* TABLET */
+@media (max-width: 992px){
+
+.cards{
+width:360px; /* 2 cards visible */
+right:40px;
+}
+
+.card{
+flex:0 0 calc(50% - 10px); /* 2 cards */
+height:200px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero-content{
+margin-left:40px;
+}
+
+}
+
+/* MOBILE */
+@media (max-width: 600px){
+
+.cards{
+width:180px; /* 1 card visible */
+right:20px;
+bottom:20px;
+}
+
+.card{
+flex:0 0 100%; /* 1 card */
+height:200px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero-content{
+margin-left:20px;
+}
+
+.search-bar{
+width:90%;
+}
+
+}
+
+/* ABOUT SECTION */
+
+.about{
+height:100vh;
+background-image:url('bg.gif');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.about-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+.about-content{
+position:relative;
+color:white;
+max-width:700px;
+text-align:center;
+margin:0 auto;
+padding:20px;
+}
+
+.about-content h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.about-content h2{
+margin-top:20px;
+margin-bottom:8px;
+font-size:22px;
+}
+
+.about-content p{
+font-size:16px;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+.contact-hero{
+width:100%;
+height:320px;
+background:#e8efe6;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+margin-top:60px;
+position:relative;
+}
+
+.contact-hero h1{
+font-size:50px;
+margin-bottom:10px;
+color:#333;
+}
+
+.contact-hero p{
+max-width:600px;
+color:#333;
+font-size:15px;
+margin:auto;
+}
+
+.contact-section{
+padding:80px 60px;
+background:#f7f7f7;
+}
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact-info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.contact-card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-card h3{
+margin-bottom:8px;
+color:#333;
+}
+
+.contact-card p{
+font-size:14px;
+color:#555;
+}
+
+.map{
+grid-column:span 2;
+border-radius:12px;
+overflow:hidden;
+}
+
+.map iframe{
+width:100%;
+height:200px;
+border:none;
+}
+
+.contact-form h2{
+font-size:32px;
+margin-bottom:15px;
+color:#2f3e2f;
+}
+
+.contact-form form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-family:'Poppins',sans-serif;
+}
+
+.contact-form textarea{
+height:120px;
+resize:none;
+}
+
+.contact-form button{
+background:#0D1A63;
+border:none;
+padding:14px;
+border-radius:30px;
+color:white;
+font-size:15px;
+cursor:pointer;
+}
+
+.contact-form button:hover{
+opacity:0.9;
+}
+
+/* =========================
+   ABOUT SECTION RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 992px){
+
+.about-content h1{
+font-size:45px;
+}
+
+.about-content{
+max-width:600px;
+padding:30px;
+}
+
+.about-content p{
+font-size:15px;
+}
+
+}
+
+/* Mobile */
+@media (max-width: 600px){
+
+.about{
+height:auto;
+padding:80px 20px;
+}
+
+.about-content h1{
+font-size:36px;
+}
+
+.about-content h2{
+font-size:20px;
+}
+
+.about-content p{
+font-size:14px;
+}
+
+}
+
+
+/* =========================
+   CONTACT SECTION RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 992px){
+
+.contact-section{
+padding:60px 40px;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.contact-info{
+grid-template-columns:1fr 1fr;
+}
+
+.map{
+grid-column:span 2;
+}
+
+.contact-hero h1{
+font-size:40px;
+}
+
+}
+
+
+/* Mobile */
+@media (max-width: 600px){
+
+.contact-hero{
+height:auto;
+padding:60px 20px;
+}
+
+.contact-hero h1{
+font-size:32px;
+}
+
+.contact-hero p{
+font-size:14px;
+}
+
+.contact-section{
+padding:50px 20px;
+}
+
+.contact-info{
+grid-template-columns:1fr;
+}
+
+.contact-card{
+padding:20px;
+}
+
+.contact-form h2{
+font-size:26px;
+}
+
+.contact-form input,
+.contact-form textarea{
+font-size:14px;
+}
+
+.contact-form button{
+font-size:14px;
+padding:12px;
+}
+
+.map iframe{
+height:180px;
+}
+/* MOBILE NAVIGATION LAYOUT */
+.nav{
+flex-direction:column;
+align-items:center;
+gap:8px;
+}
+
+.logo{
+justify-content:center;
+}
+
+.nav-links{
+justify-content:center;
+gap:20px;
+}
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+<nav class="nav">
+
+<div class="logo">
+<span class="logo-text">ICTechGuide</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<section class="hero">
+<div class="about-overlay"></div>
+
+<div class="search-bar">
+<select id="appDropdown">
+<option selected disabled>Choose an Interactive Tool</option>
+
+<option value="mentimeter.html">Mentimeter — Live polls & quizzes</option>
+<option value="wooclap.html">Wooclap — Interactive classroom engagement</option>
+<option value="slido.html">Slido — Q&A, polls & surveys</option>
+<option value="genially.html">Genially — Interactive presentations</option>
+<option value="blooket.html">Blooket — Quizzes and review</option>
+
+</select>
+</div>
+
+<div class="hero-content">
+
+<div class="location">
+ICTechGuide
+</div>
+
+<h1>ONLINE<br>TUTORIALS</h1>
+
+<p>
+ICTechGuide provides online video tutorials designed to support pre-service ICT teachers in developing their digital and teaching skills. ICTechGuide offers step-by-step instructional videos, demonstrations, and practical guides on how to use different ICT tools, applications, and educational technologies in teaching and learning.
+</p>
+<a href="#contact">
+<button class="explore-btn">Ask</button>
+</a>
+
+</div>
+
+
+
+<div class="cards">
+<div class="cards-track">
+
+<!-- ORIGINAL -->
+
+
+<a href="mentimeter.html" class="card-link">
+<div class="card">
+<img src="mentimeter.jpg">
+<div class="card-info"><h4>Mentimeter</h4></div>
+</div>
+</a>
+
+<a href="wooclap.html" class="card-link">
+<div class="card">
+<img src="wooclap.jpg">
+<div class="card-info"><h4>Wooclap</h4></div>
+</div>
+</a>
+
+<a href="slido.html" class="card-link">
+<div class="card">
+<img src="slido.jpg">
+<div class="card-info"><h4>Slido</h4></div>
+</div>
+</a>
+
+<a href="genially.html" class="card-link">
+<div class="card">
+<img src="genially.jpg">
+<div class="card-info"><h4>Genially</h4></div>
+</div>
+</a>
+
+<a href="blooket.html" class="card-link">
+<div class="card">
+<img src="blooket.jpg">
+<div class="card-info"><h4>Blooket</h4></div>
+</div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- DUPLICATE FOR SEAMLESS LOOP -->
+
+<a href="mentimeter.html" class="card-link">
+<div class="card">
+<img src="mentimeter.jpg">
+<div class="card-info"><h4>Mentimeter</h4></div>
+</div>
+</a>
+
+<a href="wooclap.html" class="card-link">
+<div class="card">
+<img src="wooclap.jpg">
+<div class="card-info"><h4>Wooclap</h4></div>
+</div>
+</a>
+
+<a href="slido.html" class="card-link">
+<div class="card">
+<img src="slido.jpg">
+<div class="card-info"><h4>Slido</h4></div>
+</div>
+</a>
+
+<a href="genially.html" class="card-link">
+<div class="card">
+<img src="genially.jpg">
+<div class="card-info"><h4>Genially</h4></div>
+</div>
+</a>
+
+<a href="edpuzzle.html" class="card-link">
+<div class="card">
+<img src="edpuzzle.jpg">
+<div class="card-info"><h4>Edpuzzle</h4></div>
+</div>
+</a>
+
+</div>
+</div>
+
+</section>
+
+
+
+<section class="about" id="about">
+
+
+<div class="about-overlay"></div>
+
+<div class="about-content">
+
+<h1>About Us</h1>
+
+<h2>Purpose</h2>
+<p>
+This website was created to help pre-service ICT teachers improve their ICT knowledge and skills.
+It provides online tutorial videos that help future teachers learn how to use interactive technology
+and websites for effective teaching.
+</p>
+
+<h2>Mission</h2>
+<p>
+Our mission is to help pre-service ICT teachers develop their digital skills through simple
+and helpful online tutorials.
+</p>
+
+<h2>Vision</h2>
+<p>
+To become a useful learning platform where future teachers can learn how to use technology
+confidently in teaching.
+</p>
+
+<h2>Description</h2>
+<p>
+The website provides online tutorial videos for pre-service teachers. These videos show
+step-by-step guides on how to use different websites for lesson preparation and classroom
+activities. The goal is to make learning ICT skills easy and accessible anytime.
+</p>
+
+</div>
+
+</section>
+
+<section class="contact-hero">
+
+<div class="contact-hero-content">
+<h1>Contact Us</h1>
+<p>
+Have questions or need help? Feel free to reach out to us and we will gladly assist you.
+</p>
+</div>
+
+</section>
+<section class="contact-section" id="contact">
+
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<div class="contact-card">
+<h3>Phone</h3>
+<p>09653016907</p>
+</div>
+
+<div class="contact-card">
+<h3>Whatsapp</h3>
+<p>09653016907</p>
+</div>
+
+<div class="contact-card">
+<h3>Email</h3>
+<p>ictechguide@gmail.com</p>
+</div>
+
+
+</div>
+
+<div class="contact-form">
+
+<h2>Get In Touch</h2>
+
+<form id="contactForm">
+
+<input type="text" name="name" placeholder="Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="text" name="subject" placeholder="Subject" required>
+
+<textarea name="message" placeholder="Message" required></textarea>
+
+<button type="submit">Send Now</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+emailjs.init("dlRoBC__Y-J_hO-K8"); // Replace with your EmailJS Public Key
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+e.preventDefault();
+
+const formData = {
+name: this.name.value,
+email: this.email.value,
+subject: this.subject.value,
+message: this.message.value
+};
+
+emailjs.send("service_1l98iea", "template_43bu7tf", formData)
+.then(function() {
+alert("Message sent successfully!");
+document.getElementById("contactForm").reset();
+})
+.catch(function(error) {
+console.log("FAILED...", error);
+alert("Failed to send message.");
+});
+
+});
+
+});
+
+document.getElementById("appDropdown").addEventListener("change", function() {
+    window.location.href = this.value;
+});
+</script>
+
+</html>
+
