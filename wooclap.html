@@ -320,6 +320,14 @@ gap:20px;
 </section>
 
 </body>
+<script>
+  document.getElementById("appDropdown").addEventListener("change", function() {
+    const selectedPage = this.value;
+    if (selectedPage) {
+      window.location.href = selectedPage;
+    }
+  });
+</script>
 </html>
 
 
