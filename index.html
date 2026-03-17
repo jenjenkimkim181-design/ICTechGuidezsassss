@@ -884,4 +884,39 @@ strategies.
 
 </section>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+emailjs.init("dlRoBC__Y-J_hO-K8"); // Replace with your EmailJS Public Key
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+e.preventDefault();
+
+const formData = {
+name: this.name.value,
+email: this.email.value,
+subject: this.subject.value,
+message: this.message.value
+};
+
+emailjs.send("service_1l98iea", "template_43bu7tf", formData)
+.then(function() {
+alert("Message sent successfully!");
+document.getElementById("contactForm").reset();
+})
+.catch(function(error) {
+console.log("FAILED...", error);
+alert("Failed to send message.");
+});
+
+});
+
+});
+
+document.getElementById("appDropdown").addEventListener("change", function() {
+    window.location.href = this.value;
+});
+</script>
+
 </html>
