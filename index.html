@@ -171,7 +171,7 @@ cursor:pointer;
 
 .hero{
 height:100vh;
-background-image:url('aboutus.png');
+background-image:url('home1.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
@@ -376,7 +376,7 @@ width:90%;
 
 .about{
 min-height:100vh;
-background-image:url('sababa1.png');
+background-image:url('home2.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
@@ -645,9 +645,6 @@ ICTechGuide
 <p>
 ICTechGuide provides online video tutorials designed to support pre-service ICT teachers in developing their digital and teaching skills. ICTechGuide offers step-by-step instructional videos, demonstrations, and practical guides on how to use different ICT tools, applications, and educational technologies in teaching and learning.
 </p>
-<a href="#contact">
-<button class="explore-btn">Ask</button>
-</a>
 
 </div>
 
@@ -886,37 +883,12 @@ strategies.
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-
-emailjs.init("dlRoBC__Y-J_hO-K8"); // Replace with your EmailJS Public Key
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-e.preventDefault();
-
-const formData = {
-name: this.name.value,
-email: this.email.value,
-subject: this.subject.value,
-message: this.message.value
-};
-
-emailjs.send("service_1l98iea", "template_43bu7tf", formData)
-.then(function() {
-alert("Message sent successfully!");
-document.getElementById("contactForm").reset();
-})
-.catch(function(error) {
-console.log("FAILED...", error);
-alert("Failed to send message.");
-});
-
-});
-
-});
-
-document.getElementById("appDropdown").addEventListener("change", function() {
-    window.location.href = this.value;
-});
+  document.getElementById("appDropdown").addEventListener("change", function() {
+    const selectedPage = this.value;
+    if (selectedPage) {
+      window.location.href = selectedPage;
+    }
+  });
 </script>
 
 </html>
