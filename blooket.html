@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
+  <title>Blooket</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+section {
+  padding: 40px;
+  text-align: center;
+  background: transparent;
 }
-
-body{
-background:#fff;
+   body {
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
-
 
 .header{
 width:100%;
@@ -173,108 +177,211 @@ color: #2f3e2f;
 transition: 0.3s;
 }
 
-.hero{
-  height:100vh;
-  background-image:url('aboutus.png');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  position:relative;
-  padding:40px;
-  align-items:center;
-  color:#ffffff;
-}
-.hero h4{
-font-size:60px;
-line-height:0.9;
-font-weight:700;
-margin-bottom:20px;
+
+.hero {
+  height: 100vh;
+  position: relative;
+  padding: 40px;
+  color: #ffffff;
 }
 
-.hero p{
-font-size:16px;
-opacity:0.9;
-margin-bottom:25px;
-}
-    section {padding:40px; text-align:center;}
-    .video-container {margin:20px auto; max-width:700px;}
-    iframe {width:100%; height:400px; border:none;}
-    .visit-btn {display:inline-block; margin-top:20px; padding:12px 25px; background:#007BFF; color:white; text-decoration:none; border-radius:8px; font-size:18px;}
-    .visit-btn:hover {background:#0056b3;}
-    footer {background:#222; color:white; text-align:center; padding:15px; margin-top:40px;}
-	.video-controls{
-margin-top:10px;
-display:flex;
-justify-content:center;
-gap:10px;
+    .hero h4 {
+      font-size: 60px;
+      line-height: 0.9;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .video-container {
+  flex: 1;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
-.video-controls button{
-padding:10px 18px;
-border:none;
-border-radius:6px;
-background:#2f3e2f;
-color:white;
-cursor:pointer;
-font-size:14px;
+    .video-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  display: block;
+}
+    .visit-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .visit-btn:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .video-controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .video-controls button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background: #2f3e2f;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .video-controls button:hover {
+      background: #4f6b4f;
+    }
+
+    /* Hero title row: logo + h4 aligned horizontally */
+    .title-row {
+      display: flex;
+      align-items: center;
+      /* vertical alignment */
+      justify-content: center;
+      /* horizontal centering on page */
+      gap: 12px;
+      /* space between logo and text */
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      /* vertical alignment */
+      justify-content: center;
+      /* center horizontally */
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .hero-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 12px;
+      /* makes the sides slightly rounded */
+    }
+
+    .title-row h4 {
+      font-size: 60px;
+      line-height: 1;
+      /* remove extra vertical spacing */
+      margin: 0;
+      /* remove default margin */
+    }
+
+    /* MOBILE NAVIGATION LAYOUT */
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+	
+.content-section {
+  padding: 60px 40px;
 }
 
-.video-controls button:hover{
-background:#4f6b4f;
-}
-/* Hero title row: logo + h4 aligned horizontally */
-.title-row {
-  display: flex;             
-  align-items: center;        /* vertical alignment */
-  justify-content: center;    /* horizontal centering on page */
-  gap: 12px;                  /* space between logo and text */
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.title-row {
+.content-row {
   display: flex;
-  align-items: center;     /* vertical alignment */
-  justify-content: center; /* center horizontally */
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Alternate layout */
+.content-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Video */
+.video-container {
+  flex: 1;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+}
+
+/* Text */
+.text-content {
+  flex: 1;
+  text-align: left;
+}
+
+.text-content h1 {
+  font-size: 32px;
   margin-bottom: 15px;
 }
 
-.hero-logo {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  border-radius: 12px; /* makes the sides slightly rounded */
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.title-row h4{
-  font-size:60px;
-  line-height:1;           /* remove extra vertical spacing */
-  margin:0;                /* remove default margin */
-}
-/* MOBILE NAVIGATION LAYOUT */
-@media (max-width: 600px){
-.nav{
-flex-direction:column;
-align-items:center;
-gap:8px;
-}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+  }
 
-.logo{
-justify-content:center;
-}
+  .content-row.reverse {
+    flex-direction: column;
+  }
 
-.nav-links{
-justify-content:center;
-gap:20px;
-}
+  .text-content {
+    text-align: center;
+  }
 }
   </style>
 </head>
+
 <body>
 
 
-<header class="header">
+  <header class="header">
 <nav class="nav">
 
 <div class="logo">
@@ -303,10 +410,12 @@ gap:20px;
 </div>
 </nav>
 </header>
-<br>
-<br>
-<br>
-<section class="hero">
+  <br>
+  <br>
+  <br>
+  
+
+ <section class="hero">
   <div class="title-row">
   <img src="blooketlogo.jpg" alt="blooket Logo" class="hero-logo">
   <h4>Blooket</h4>
@@ -314,87 +423,192 @@ gap:20px;
 
   <p>Blooket is an interactive online learning platform that turns quizzes and reviews into fun classroom games. It allows teachers to create or choose question sets and present them in different game modes where students can answer questions while competing or collaborating with classmates.
   </p>
-	<h1>Introduction</h1>
-  <div class="video-container">
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  <section class="content-section">
+  <div class="content-row">
+     <div class="video-container">
  <iframe src="https://player.vimeo.com/video/1171624784?h=9f1868b0c8?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="400" height="300" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="MENTIMETER"></iframe>
  </div>
-</section>
-	
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Checking your stats</h1>
+
+    <div class="text-content">
+     <h1>Introduction</h1>
+      <p>Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.</p>
     </div>
+
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-row reverse">
+    
     <div class="video-container">
      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174037808?h=2ce8245c92" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Picking Blooks</h1>
+    <div class="text-content">
+       <h1><br>Checking your stats</h1>
+      <p>Description...</p>
     </div>
-    <div class="video-container">
+
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-row">
+     <div class="video-container">
     <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174038208?h=20a93de5bb" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Exploring market</h1>
+    <div class="text-content">
+      <h1><br>Picking Blooks</h1>
+      <p>Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.</p>
     </div>
+
+  </div>
+</section>
+  
+  <section class="content-section">
+  <div class="content-row reverse">
+    
     <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174038650?h=48554850ea" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Discover pre-made games</h1>
+    <div class="text-content">
+      <h1><br>Exploring market</h1>
+      <p>Description...</p>
     </div>
-    <div class="video-container">
+
+  </div>
+</section>
+ 
+ <section class="content-section">
+  <div class="content-row">
+      <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174038722?h=5d1625ebfc" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Exploring set creation</h1>
+    <div class="text-content">
+      <h1><br>Discover pre-made games</h1>
+      <p>Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.</p>
     </div>
+
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-row reverse">
+    
     <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174039115?h=3fb7fac2e1" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Creating a set</h1>
+    <div class="text-content">
+      <h1><br>Exploring set creation</h1>
+      <p>Description...</p>
     </div>
-    <div class="video-container">
+
+  </div>
+</section>
+
+ <section class="content-section">
+  <div class="content-row">
+       <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174039155?h=c7be17a8a1" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
- <section class="hero">
-    <div class="title-row">
-      <h1><br>Exploring question editor</h1>
+    <div class="text-content">
+       <h1><br>Creating a set</h1>
+      <p>Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.</p>
     </div>
+
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-row reverse">
+    
     <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174039238?h=bb1fff3ddf" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
-<section class="hero">
-    <div class="title-row">
-      <h1><br>Hosting the set</h1>
+    <div class="text-content">
+      <h1><br>Exploring question editor</h1>
+      <p>Description...</p>
     </div>
-    <div class="video-container">
+
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-row">
+        <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174039400?h=cf032d2029" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-  </section>
+  </div>
 
-<section class="hero">
-    <div class="title-row">
-      <h1><br>Checking the results</h1>
+    <div class="text-content">
+        <h1><br>Hosting the set</h1>
+      <p>Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.Mentimeter is an interactive presentation tool that allows presenters to engage their audience in real time. It
+      enables teachers, students, and speakers to create presentations where participants can respond to questions,
+      polls, quizzes, and word clouds using their smartphones or computers.</p>
     </div>
+
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-row reverse">
+    
     <div class="video-container">
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1174043041?h=3a48a8b424" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
-<br>
-  <a class="visit-btn" href="https://www.blooket.com/" target="_blank">Visit Blooket</a>
-  </section>
-	
+</div>
 
+    <div class="text-content">
+      <h1><br>Checking the results</h1>
+      <p>Description...</p>
+    </div>
+
+  </div>
+</section>
+      <a class="visit-btn" href="https://www.blooket.com/" target="_blank">Visit Blooket</a>
+
+ 
 </body>
 <script>
   document.getElementById("appDropdown").addEventListener("change", function() {
@@ -405,7 +619,3 @@ gap:20px;
   });
 </script>
 </html>
-
-
-
-
