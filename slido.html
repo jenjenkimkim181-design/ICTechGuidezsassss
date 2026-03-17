@@ -324,6 +324,14 @@ gap:20px;
 	
   <a class="visit-btn" href="https://www.slido.com/" target="_blank">Visit Slido</a>
 </body>
+	<script>
+  document.getElementById("appDropdown").addEventListener("change", function() {
+    const selectedPage = this.value;
+    if (selectedPage) {
+      window.location.href = selectedPage;
+    }
+  });
+</script>
 </html>
 
 
