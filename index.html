@@ -32,11 +32,11 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 
 .nav{
 display:flex;
-justify-content:space-between;
 align-items:center;
 max-width:1200px;
 margin:auto;
 padding:15px 40px;
+gap:40px;
 }
 
 .nav-links{
@@ -55,6 +55,90 @@ font-weight:500;
 display:flex;
 gap:10px;
 }
+
+.nav-actions{
+margin-left:auto;
+display:flex;
+align-items:center;
+}
+
+.nav-actions .search-bar{
+position:relative;
+top:auto;
+left:auto;
+transform:none;
+width:260px;
+padding:6px 14px;
+border-radius:30px;
+box-shadow:none;
+border:1px solid #ddd;
+}
+
+.nav-actions select{
+font-size:14px;
+padding:6px 10px;
+}
+
+.nav-actions .search-bar{
+position:relative;
+background:white;
+width:260px;
+padding:4px 14px;
+border-radius:30px;
+border:1px solid #ddd;
+display:flex;
+align-items:center;
+box-shadow:none;
+}
+
+/* SEARCH BAR */
+
+.search-bar{
+position:absolute;
+top:100px;
+left:50%;
+transform:translateX(-50%);
+background:white;
+padding:12px 20px;
+border-radius:40px;
+width:460px;
+display:flex;
+align-items:center;
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+border:1px solid rgba(0,0,0,0.05);
+}
+
+/* SELECT DROPDOWN */
+
+.search-bar select{
+border:none;
+outline:none;
+width:100%;
+font-size:15px;
+background:white;
+cursor:pointer;
+padding:10px 14px;
+border-radius:40px;
+color:#333;
+font-weight:500;
+appearance:none;
+background-repeat:no-repeat;
+background-position:right 10px center;
+background-size:18px;
+}
+
+/* subtle hover */
+
+.search-bar select:hover{
+background-color:#f7f7f7;
+}
+
+/* focus effect */
+
+.search-bar select:focus{
+background-color:#f9f9f9;
+}
+
 
 .logo{
 display:flex;
@@ -80,6 +164,8 @@ background:#2f3e2f;
 color:white;
 cursor:pointer;
 }
+
+
 
 /* HERO SECTION */
 
@@ -140,57 +226,6 @@ border-radius:10px;
 font-weight:500;
 cursor:pointer;
 }
-
-
-/* SEARCH BAR */
-
-.search-bar{
-position:absolute;
-top:100px;
-left:50%;
-transform:translateX(-50%);
-background:white;
-padding:12px 20px;
-border-radius:40px;
-width:460px;
-display:flex;
-align-items:center;
-box-shadow:0 12px 30px rgba(0,0,0,0.15);
-border:1px solid rgba(0,0,0,0.05);
-}
-
-/* SELECT DROPDOWN */
-
-.search-bar select{
-border:none;
-outline:none;
-width:100%;
-font-size:15px;
-background:white;
-cursor:pointer;
-padding:10px 14px;
-border-radius:40px;
-color:#333;
-font-weight:500;
-appearance:none;
-background-image:url("data:image/svg+xml;utf8,<svg fill='%23666' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5.25 7.5L10 12.25L14.75 7.5'/></svg>");
-background-repeat:no-repeat;
-background-position:right 10px center;
-background-size:18px;
-}
-
-/* subtle hover */
-
-.search-bar select:hover{
-background-color:#f7f7f7;
-}
-
-/* focus effect */
-
-.search-bar select:focus{
-background-color:#f9f9f9;
-}
-
 
 
 /* DESTINATION CARDS */
@@ -335,10 +370,12 @@ width:90%;
 
 }
 
-/* ABOUT SECTION */
+/* =========================
+   AESTHETIC ABOUT SECTION
+========================= */
 
 .about{
-height:100vh;
+min-height:100vh;
 background-image:url('sababa1.png');
 background-size:cover;
 background-position:center;
@@ -347,157 +384,89 @@ position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
+padding:100px 20px;
 }
 
+/* darker + softer overlay */
 .about-overlay{
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+background:linear-gradient(135deg, rgba(0,0,0,0.4));
+backdrop-filter:blur(4px);
 }
 
+/* MAIN GLASS CONTAINER */
 .about-content{
 position:relative;
 color:white;
-max-width:700px;
+max-width:1100px;
+width:100%;
+padding:50px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.about-content h1{
 text-align:center;
-margin:0 auto;
-padding:20px;
+font-size:48px;
+margin-bottom:40px;
+letter-spacing:1px;
+}
+
+/* GRID LAYOUT */
+.about-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+/* INDIVIDUAL CARDS */
+.about-card{
+background:rgba(255,255,255,0.12);
+padding:25px;
+border-radius:16px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.about-card:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.18);
+}
+
+/* TEXT */
+.about-card h2{
+font-size:20px;
+margin-bottom:10px;
+color:#ffffff;
+}
+
+.about-card p{
+font-size:14px;
+line-height:1.6;
+color:#f1f1f1;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about-content{
+padding:30px 20px;
 }
 
 .about-content h1{
-font-size:60px;
-margin-bottom:20px;
-}
-
-.about-content h2{
-margin-top:20px;
-margin-bottom:8px;
-font-size:22px;
-}
-
-.about-content p{
-font-size:16px;
-line-height:1.6;
-margin-bottom:10px;
-}
-
-.contact-hero{
-width:100%;
-height:320px;
-background:#e8efe6;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-margin-top:60px;
-position:relative;
-}
-
-.contact-hero h1{
-font-size:50px;
-margin-bottom:10px;
-color:#333;
-}
-
-.contact-hero p{
-max-width:600px;
-color:#333;
-font-size:15px;
-margin:auto;
-}
-
-.contact-section{
-padding:80px 60px;
-background:#f7f7f7;
-}
-
-.contact-container{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-}
-
-.contact-info{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.contact-card{
-background:white;
-padding:30px;
-border-radius:12px;
-text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-
-.contact-card h3{
-margin-bottom:8px;
-color:#333;
-}
-
-.contact-card p{
-font-size:14px;
-color:#555;
-}
-
-.map{
-grid-column:span 2;
-border-radius:12px;
-overflow:hidden;
-}
-
-.map iframe{
-width:100%;
-height:200px;
-border:none;
-}
-
-.contact-form h2{
 font-size:32px;
-margin-bottom:15px;
-color:#2f3e2f;
 }
-
-.contact-form form{
-display:flex;
-flex-direction:column;
-gap:15px;
 }
-
-.contact-form input,
-.contact-form textarea{
-padding:12px;
-border-radius:8px;
-border:1px solid #ddd;
-font-family:'Poppins',sans-serif;
-}
-
-.contact-form textarea{
-height:120px;
-resize:none;
-}
-
-.contact-form button{
-background:#0D1A63;
-border:none;
-padding:14px;
-border-radius:30px;
-color:white;
-font-size:15px;
-cursor:pointer;
-}
-
-.contact-form button:hover{
-opacity:0.9;
-}
-
 /* =========================
    ABOUT SECTION RESPONSIVE
 ========================= */
@@ -541,22 +510,93 @@ font-size:14px;
 }
 
 }
+/* FEATURES SECTION */
 
-/* MOBILE NAVIGATION LAYOUT */
-.nav{
-flex-direction:column;
-align-items:center;
-gap:8px;
+.features{
+padding:100px 60px;
+background:#ffffff;
 }
 
-.logo{
-justify-content:center;
+.features-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
 }
 
-.nav-links{
-justify-content:center;
-gap:20px;
+.features-title{
+font-size:50px;
+color:#2f3e2f;
+margin-bottom:15px;
 }
+
+.features-subtitle{
+max-width:700px;
+margin:auto;
+margin-bottom:60px;
+color:#555;
+font-size:16px;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.feature-card{
+background:#f7f7f7;
+padding:30px;
+border-radius:14px;
+text-align:left;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.1);
+}
+
+.feature-card h3{
+margin-bottom:10px;
+color:#2f3e2f;
+}
+
+.feature-card p{
+font-size:14px;
+color:#555;
+line-height:1.6;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.features-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.features-title{
+font-size:40px;
+}
+
+}
+
+@media(max-width:600px){
+
+.features{
+padding:80px 20px;
+}
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+.features-title{
+font-size:32px;
+}
+
 }
 </style>
 </head>
@@ -573,10 +613,7 @@ gap:20px;
 <li><a href="index.html">Home</a></li>
 <li><a href="#about">About Us</a></li>
 </ul>
-</nav>
-</header>
-<section class="hero">
-<div class="about-overlay"></div>
+<div class="nav-actions">
 
 <div class="search-bar">
 <select id="appDropdown">
@@ -590,6 +627,12 @@ gap:20px;
 
 </select>
 </div>
+
+</div>
+</nav>
+</header>
+<section class="hero">
+<div class="about-overlay"></div>
 
 <div class="hero-content">
 
@@ -720,83 +763,125 @@ ICTechGuide provides online video tutorials designed to support pre-service ICT 
 </div>
 
 </section>
-
-
-
 <section class="about" id="about">
-
 
 <div class="about-overlay"></div>
 
 <div class="about-content">
 
-<h1>About Us</h1>
+<h1>About ICTechGuide</h1>
 
+<div class="about-grid">
+
+<div class="about-card">
 <h2>Purpose</h2>
 <p>
 This website was created to help pre-service ICT teachers improve their ICT knowledge and skills.
-It provides online tutorial videos that help future teachers learn how to use interactive technology
-and websites for effective teaching.
+It provides online tutorial videos that guide future teachers in using interactive technologies effectively.
 </p>
+</div>
 
+<div class="about-card">
 <h2>Mission</h2>
 <p>
-Our mission is to help pre-service ICT teachers develop their digital skills through simple
-and helpful online tutorials.
+Our mission is to help pre-service ICT teachers develop their digital skills through simple,
+clear, and practical online tutorials.
 </p>
+</div>
 
+<div class="about-card">
 <h2>Vision</h2>
 <p>
-To become a useful learning platform where future teachers can learn how to use technology
-confidently in teaching.
+To become a trusted learning platform where future teachers confidently integrate technology
+into their teaching practices.
 </p>
+</div>
 
+<div class="about-card">
 <h2>Description</h2>
 <p>
-The website provides online tutorial videos for pre-service teachers. These videos show
-step-by-step guides on how to use different websites for lesson preparation and classroom
-activities. The goal is to make learning ICT skills easy and accessible anytime.
+ICTechGuide offers step-by-step tutorials on using digital tools for lesson preparation,
+interactive activities, and classroom engagement—accessible anytime, anywhere.
 </p>
+</div>
+
+</div>
 
 </div>
 
 </section>
-   
+
+
+<section class="features">
+
+<div class="features-container">
+
+<h1 class="features-title">Website Features</h1>
+<p class="features-subtitle">
+ICTechGuide provides tools and resources that help pre-service ICT teachers
+learn how to effectively use digital applications in their teaching.
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>Step-by-Step Tutorials</h3>
+<p>
+ICTechGuide provides clear and easy step-by-step video tutorials that guide
+teachers in learning how to use different ICT tools and applications for
+teaching and classroom activities.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Interactive Learning Tools</h3>
+<p>
+The website introduces various interactive applications such as Mentimeter,
+Wooclap, Slido, Genially, and Blooket that can be used to create engaging
+learning experiences for students.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Improves Digital Teaching Skills</h3>
+<p>
+By exploring the tutorials and demonstrations, teachers can strengthen their
+digital skills and become more confident in integrating technology into their
+lessons.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Classroom Engagement</h3>
+<p>
+Teachers can learn how to use digital tools to create quizzes, polls,
+interactive presentations, and activities that improve student participation
+and engagement.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Accessible Learning</h3>
+<p>
+ICTechGuide allows teachers to access tutorials anytime and anywhere,
+making it easier for them to learn new educational technologies at their
+own pace.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Support for Pre-Service Teachers</h3>
+<p>
+The platform specifically supports future ICT teachers by providing practical
+guides on how to integrate technology effectively into their teaching
+strategies.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-
-emailjs.init("dlRoBC__Y-J_hO-K8"); // Replace with your EmailJS Public Key
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-e.preventDefault();
-
-const formData = {
-name: this.name.value,
-email: this.email.value,
-subject: this.subject.value,
-message: this.message.value
-};
-
-emailjs.send("service_1l98iea", "template_43bu7tf", formData)
-.then(function() {
-alert("Message sent successfully!");
-document.getElementById("contactForm").reset();
-})
-.catch(function(error) {
-console.log("FAILED...", error);
-alert("Failed to send message.");
-});
-
-});
-
-});
-
-document.getElementById("appDropdown").addEventListener("change", function() {
-    window.location.href = this.value;
-});
-</script>
-
 </html>
-
