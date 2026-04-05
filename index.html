@@ -16,8 +16,9 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-body{
-background:#fff;
+   body {
+  background: url('candidate3.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .header{
@@ -171,8 +172,6 @@ cursor:pointer;
 
 .hero{
 height:100vh;
-background-image:url('home1.png');
-background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 position:relative;
@@ -180,14 +179,7 @@ display:flex;
 align-items:center;
 }
 
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
-}
+
 
 .hero-content{
 position:relative;
@@ -240,9 +232,10 @@ gap:20px;
 
 .card{
 width:170px;
-height:220px;
+height:920px;
 border-radius:16px;
-overflow:hidden;
+  overflow:visible;     /* was hidden */
+  transform-origin:center;
 position:relative;
 box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
@@ -251,6 +244,23 @@ box-shadow:0 10px 25px rgba(0,0,0,0.4);
 text-decoration:none;
 color:inherit;
 display:block;
+}
+
+/* smooth animation */
+.card{
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* hovered card becomes dominant */
+.card:hover{
+  transform: scale(1.25);
+  box-shadow: 0 30px 65px rgba(0,0,0,0.7);
+  z-index: 50;
+}
+
+/* optional: pause slider so the grow is visible */
+.cards:hover .cards-track{
+  animation-play-state: paused;
 }
 
 .card img{
@@ -282,10 +292,11 @@ overflow:hidden;
 }
 
 .cards-track{
-display:flex;
-gap:20px;
-width:max-content;
-animation:slideCards 25s linear infinite;
+  display:flex;
+  gap:20px;
+  width:max-content;
+  animation:slideCards 25s linear infinite;
+  overflow:visible;
 }
 
 .card{
@@ -385,17 +396,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 padding:100px 20px;
-}
-
-/* darker + softer overlay */
-.about-overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(135deg, rgba(0,0,0,0.4));
-backdrop-filter:blur(4px);
 }
 
 /* MAIN GLASS CONTAINER */
@@ -598,6 +598,49 @@ font-size:32px;
 }
 
 }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+  }
+
+  .content-row.reverse {
+    flex-direction: column;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-actions .search-bar {
+    width: 90%;
+    max-width: 320px;
+  }
+
+}
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 100px; /* pushes content below header */
+  }
+}
+.logomo {
+  width: 200px;        /* adjust size */
+  height: 80px;
+  object-fit: contain;
+}
 </style>
 </head>
 
@@ -606,12 +649,12 @@ font-size:32px;
 <nav class="nav">
 
 <div class="logo">
-<span class="logo-text">ICTechGuide</span>
+<img src="logomo.jpg" alt="ICTechGuide Logo" class="logomo">
 </div>
 
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
-<li><a href="#about">About Us</a></li>
+<li><a href="about.html">About Us</a></li>
 </ul>
 <div class="nav-actions">
 
@@ -619,11 +662,11 @@ font-size:32px;
 <select id="appDropdown">
 <option selected disabled>Choose an Interactive Tool</option>
 
-<option value="blooket.html">Blooket — Quizzes and review</option>
-<option value="genially.html">Genially — Interactive presentations</option>
 <option value="mentimeter.html">Mentimeter — Live polls & quizzes</option>
-<option value="slido.html">Slido — Q&A, polls & surveys</option>
 <option value="wooclap.html">Wooclap — Interactive classroom engagement</option>
+<option value="slido.html">Slido — Q&A, polls & surveys</option>
+<option value="genially.html">Genially — Interactive presentations</option>
+<option value="blooket.html">Blooket — Quizzes and review</option>
 
 </select>
 </div>
@@ -757,126 +800,6 @@ ICTechGuide provides online video tutorials designed to support pre-service ICT 
 </a>
 
 </div>
-</div>
-
-</section>
-<section class="about" id="about">
-
-<div class="about-overlay"></div>
-
-<div class="about-content">
-
-<h1>About ICTechGuide</h1>
-
-<div class="about-grid">
-
-<div class="about-card">
-<h2>Purpose</h2>
-<p>
-This website was created to help pre-service ICT teachers improve their ICT knowledge and skills.
-It provides online tutorial videos that guide future teachers in using interactive technologies effectively.
-</p>
-</div>
-
-<div class="about-card">
-<h2>Mission</h2>
-<p>
-Our mission is to help pre-service ICT teachers develop their digital skills through simple,
-clear, and practical online tutorials.
-</p>
-</div>
-
-<div class="about-card">
-<h2>Vision</h2>
-<p>
-To become a trusted learning platform where future teachers confidently integrate technology
-into their teaching practices.
-</p>
-</div>
-
-<div class="about-card">
-<h2>Description</h2>
-<p>
-ICTechGuide offers step-by-step tutorials on using digital tools for lesson preparation,
-interactive activities, and classroom engagement—accessible anytime, anywhere.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="features">
-
-<div class="features-container">
-
-<h1 class="features-title">Website Features</h1>
-<p class="features-subtitle">
-ICTechGuide provides tools and resources that help pre-service ICT teachers
-learn how to effectively use digital applications in their teaching.
-</p>
-
-<div class="features-grid">
-
-<div class="feature-card">
-<h3>Step-by-Step Tutorials</h3>
-<p>
-ICTechGuide provides clear and easy step-by-step video tutorials that guide
-teachers in learning how to use different ICT tools and applications for
-teaching and classroom activities.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Interactive Learning Tools</h3>
-<p>
-The website introduces various interactive applications such as Mentimeter,
-Wooclap, Slido, Genially, and Blooket that can be used to create engaging
-learning experiences for students.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Improves Digital Teaching Skills</h3>
-<p>
-By exploring the tutorials and demonstrations, teachers can strengthen their
-digital skills and become more confident in integrating technology into their
-lessons.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Classroom Engagement</h3>
-<p>
-Teachers can learn how to use digital tools to create quizzes, polls,
-interactive presentations, and activities that improve student participation
-and engagement.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Accessible Learning</h3>
-<p>
-ICTechGuide allows teachers to access tutorials anytime and anywhere,
-making it easier for them to learn new educational technologies at their
-own pace.
-</p>
-</div>
-
-<div class="feature-card">
-<h3>Support for Pre-Service Teachers</h3>
-<p>
-The platform specifically supports future ICT teachers by providing practical
-guides on how to integrate technology effectively into their teaching
-strategies.
-</p>
-</div>
-
-</div>
-
 </div>
 
 </section>
