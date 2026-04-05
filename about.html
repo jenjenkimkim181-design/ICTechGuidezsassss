@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICTechGuide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+   body {
+  background: url('candidate3.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.header{
+width:100%;
+background:white;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav{
+display:flex;
+align-items:center;
+max-width:1200px;
+margin:auto;
+padding:15px 40px;
+gap:40px;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.nav-actions{
+display:flex;
+gap:10px;
+}
+
+.nav-actions{
+margin-left:auto;
+display:flex;
+align-items:center;
+}
+
+.nav-actions .search-bar{
+position:relative;
+top:auto;
+left:auto;
+transform:none;
+width:260px;
+padding:6px 14px;
+border-radius:30px;
+box-shadow:none;
+border:1px solid #ddd;
+}
+
+.nav-actions select{
+font-size:14px;
+padding:6px 10px;
+}
+
+.nav-actions .search-bar{
+position:relative;
+background:white;
+width:260px;
+padding:4px 14px;
+border-radius:30px;
+border:1px solid #ddd;
+display:flex;
+align-items:center;
+box-shadow:none;
+}
+
+/* SEARCH BAR */
+
+.search-bar{
+position:absolute;
+top:100px;
+left:50%;
+transform:translateX(-50%);
+background:white;
+padding:12px 20px;
+border-radius:40px;
+width:460px;
+display:flex;
+align-items:center;
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+border:1px solid rgba(0,0,0,0.05);
+}
+
+/* SELECT DROPDOWN */
+
+.search-bar select{
+border:none;
+outline:none;
+width:100%;
+font-size:15px;
+background:white;
+cursor:pointer;
+padding:10px 14px;
+border-radius:40px;
+color:#333;
+font-weight:500;
+appearance:none;
+background-repeat:no-repeat;
+background-position:right 10px center;
+background-size:18px;
+}
+
+/* subtle hover */
+
+.search-bar select:hover{
+background-color:#f7f7f7;
+}
+
+/* focus effect */
+
+.search-bar select:focus{
+background-color:#f9f9f9;
+}
+
+
+.logo{
+display:flex;
+align-items:center;
+font-weight:600;
+font-size:20px;
+gap:10px;
+}
+
+.btn-outline{
+padding:8px 18px;
+border:1px solid #ccc;
+border-radius:8px;
+background:white;
+cursor:pointer;
+}
+
+.btn-dark{
+padding:8px 18px;
+border:none;
+border-radius:8px;
+background:#2f3e2f;
+color:white;
+cursor:pointer;
+}
+
+
+
+/* HERO SECTION */
+
+.hero{
+height:100vh;
+background-position:center;
+background-repeat:no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+}
+
+
+
+.hero-content{
+position:relative;
+color:white;
+max-width:650px;
+margin-left:80px;
+}
+
+.location{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:90px;
+line-height:0.9;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:16px;
+opacity:0.9;
+margin-bottom:25px;
+}
+
+.explore-btn{
+background:white;
+color:black;
+padding:14px 30px;
+border:none;
+border-radius:10px;
+font-weight:500;
+cursor:pointer;
+}
+
+.logo-text{
+font-style: italic;
+font-weight: 600;
+font-size: 22px;
+letter-spacing: 1.5px;
+color: #2f3e2f;
+transition: 0.3s;
+}
+
+/* subtle hover effect */
+.logo-text:hover{
+color: #4f6b4f;
+}
+/* TABLET */
+@media (max-width: 992px){
+
+.cards{
+width:360px; /* 2 cards visible */
+right:40px;
+}
+
+.card{
+flex:0 0 calc(50% - 10px); /* 2 cards */
+height:200px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero-content{
+margin-left:40px;
+}
+
+}
+
+/* MOBILE */
+@media (max-width: 600px){
+
+.cards{
+width:180px; /* 1 card visible */
+right:20px;
+bottom:20px;
+}
+
+.card{
+flex:0 0 100%; /* 1 card */
+height:200px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero-content{
+margin-left:20px;
+}
+
+.search-bar{
+width:90%;
+}
+
+}
+
+/* =========================
+   AESTHETIC ABOUT SECTION
+========================= */
+
+.about{
+min-height:100vh;
+background-image:url('candidate3.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:100px 20px;
+}
+
+/* MAIN GLASS CONTAINER */
+.about-content{
+position:relative;
+color:white;
+max-width:1100px;
+width:100%;
+padding:50px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.about-content h1{
+text-align:center;
+font-size:48px;
+margin-bottom:40px;
+letter-spacing:1px;
+}
+
+/* GRID LAYOUT */
+.about-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+/* INDIVIDUAL CARDS */
+.about-card{
+background:rgba(255,255,255,0.12);
+padding:25px;
+border-radius:16px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.about-card:hover{
+transform:translateY(-5px);
+background:rgba(255,255,255,0.18);
+}
+
+/* TEXT */
+.about-card h2{
+font-size:20px;
+margin-bottom:10px;
+color:#ffffff;
+}
+
+.about-card p{
+font-size:14px;
+line-height:1.6;
+color:#f1f1f1;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about-content{
+padding:30px 20px;
+}
+
+.about-content h1{
+font-size:32px;
+}
+}
+/* =========================
+   ABOUT SECTION RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 992px){
+
+.about-content h1{
+font-size:45px;
+}
+
+.about-content{
+max-width:600px;
+padding:30px;
+}
+
+.about-content p{
+font-size:15px;
+}
+
+}
+
+/* Mobile */
+@media (max-width: 600px){
+
+.about{
+height:auto;
+padding:80px 20px;
+}
+
+.about-content h1{
+font-size:36px;
+}
+
+.about-content h2{
+font-size:20px;
+}
+
+.about-content p{
+font-size:14px;
+}
+
+}
+/* FEATURES SECTION */
+
+.features{
+padding:100px 60px;
+background:#ffffff;
+}
+
+.features-container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+.features-title{
+font-size:50px;
+color:#2f3e2f;
+margin-bottom:15px;
+}
+
+.features-subtitle{
+max-width:700px;
+margin:auto;
+margin-bottom:60px;
+color:#555;
+font-size:16px;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.feature-card{
+background:#f7f7f7;
+padding:30px;
+border-radius:14px;
+text-align:left;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.1);
+}
+
+.feature-card h3{
+margin-bottom:10px;
+color:#2f3e2f;
+}
+
+.feature-card p{
+font-size:14px;
+color:#555;
+line-height:1.6;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.features-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.features-title{
+font-size:40px;
+}
+
+}
+
+@media(max-width:600px){
+
+.features{
+padding:80px 20px;
+}
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+.features-title{
+font-size:32px;
+}
+
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+  }
+
+  .content-row.reverse {
+    flex-direction: column;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-actions .search-bar {
+    width: 90%;
+    max-width: 320px;
+  }
+
+}
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 100px; /* pushes content below header */
+  }
+}
+.logomo {
+  width: 200px;        /* adjust size */
+  height: 80px;
+  object-fit: contain;
+}
+
+/* DEVELOPERS SECTION */
+.developers {
+  min-height: 100vh;
+  background-image: url('candidate3.jpg'); /* same style as about section */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.developers-content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.developers-content h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.developers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.developer-card {
+  background: rgba(255,255,255,0.12);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: 0.3s;
+}
+
+.developer-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.18);
+}
+
+.developer-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.developer-card h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.developer-card p {
+  font-size: 14px;
+  color: #f1f1f1;
+}
+
+/* Responsive */
+
+@media(max-width: 992px) {
+  .developers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .developers-content h1 {
+    font-size: 40px;
+  }
+}
+
+@media(max-width: 600px) {
+  .developers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .developers-content h1 {
+    font-size: 32px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+<nav class="nav">
+
+<div class="logo">
+<img src="logomo.jpg" alt="ICTechGuide Logo" class="logomo">
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+</ul>
+<div class="nav-actions">
+
+<div class="search-bar">
+<select id="appDropdown">
+<option selected disabled>Choose an Interactive Tool</option>
+
+<option value="mentimeter.html">Mentimeter — Live polls & quizzes</option>
+<option value="wooclap.html">Wooclap — Interactive classroom engagement</option>
+<option value="slido.html">Slido — Q&A, polls & surveys</option>
+<option value="genially.html">Genially — Interactive presentations</option>
+<option value="blooket.html">Blooket — Quizzes and review</option>
+
+</select>
+</div>
+
+</div>
+</nav>
+</header>
+<br>
+<br>
+<br>
+<section class="about" id="about">
+
+<div class="about-overlay"></div>
+
+<div class="about-content">
+
+<h1>About ICTechGuide</h1>
+
+<div class="about-grid">
+
+<div class="about-card">
+<h2>Purpose</h2>
+<p>
+This website was created to help pre-service ICT teachers improve their ICT knowledge and skills.
+It provides online tutorial videos that guide future teachers in using interactive technologies effectively.
+</p>
+</div>
+
+<div class="about-card">
+<h2>Mission</h2>
+<p>
+Our mission is to help pre-service ICT teachers develop their digital skills through simple,
+clear, and practical online tutorials.
+</p>
+</div>
+
+<div class="about-card">
+<h2>Vision</h2>
+<p>
+To become a trusted learning platform where future teachers confidently integrate technology
+into their teaching practices.
+</p>
+</div>
+
+<div class="about-card">
+<h2>Description</h2>
+<p>
+ICTechGuide offers step-by-step tutorials on using digital tools for lesson preparation,
+interactive activities, and classroom engagement—accessible anytime, anywhere.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="features">
+
+<div class="features-container">
+
+<h1 class="features-title">Website Features</h1>
+<p class="features-subtitle">
+ICTechGuide provides tools and resources that help pre-service ICT teachers
+learn how to effectively use digital applications in their teaching.
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>Step-by-Step Tutorials</h3>
+<p>
+ICTechGuide provides clear and easy step-by-step video tutorials that guide
+teachers in learning how to use different ICT tools and applications for
+teaching and classroom activities.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Interactive Learning Tools</h3>
+<p>
+The website introduces various interactive applications such as Mentimeter,
+Wooclap, Slido, Genially, and Blooket that can be used to create engaging
+learning experiences for students.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Improves Digital Teaching Skills</h3>
+<p>
+By exploring the tutorials and demonstrations, teachers can strengthen their
+digital skills and become more confident in integrating technology into their
+lessons.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Classroom Engagement</h3>
+<p>
+Teachers can learn how to use digital tools to create quizzes, polls,
+interactive presentations, and activities that improve student participation
+and engagement.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Accessible Learning</h3>
+<p>
+ICTechGuide allows teachers to access tutorials anytime and anywhere,
+making it easier for them to learn new educational technologies at their
+own pace.
+</p>
+</div>
+
+<div class="feature-card">
+<h3>Support for Pre-Service Teachers</h3>
+<p>
+The platform specifically supports future ICT teachers by providing practical
+guides on how to integrate technology effectively into their teaching
+strategies.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- DEVELOPERS SECTION -->
+<section class="developers">
+  <div class="developers-content">
+
+    <h1>The Developers</h1>
+
+    <div class="developers-grid">
+      <div class="developer-card">
+        <img src="arianne.jpg" alt="Developer 1">
+        <h2>Arianne Kaye J. Quiocho</h2>
+        <p>BTLEd-ICT</p>
+      </div>
+      <div class="developer-card">
+        <img src="hacell.jpg" alt="Developer 2">
+        <h2>Hacell Ann L. Patricio</h2>
+        <p>BTLEd-ICT</p>
+      </div>
+      <div class="developer-card">
+        <img src="junmark.jpg" alt="Developer 3">
+        <h2>Junmark Harrizon B. Taronas</h2>
+        <p>BTLEd-ICT</p>
+      </div>
+      <div class="developer-card">
+        <img src="rohanie.jpg" alt="Developer 4">
+        <h2>Rohanie S.M Belison</h2>
+        <p>BTLEd-ICT</p>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  document.getElementById("appDropdown").addEventListener("change", function() {
+    const selectedPage = this.value;
+    if (selectedPage) {
+      window.location.href = selectedPage;
+    }
+  });
+</script>
+
+</html>
