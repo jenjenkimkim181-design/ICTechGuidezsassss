@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wooclap</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@ section {
   background: transparent;
 }
    body {
-  background: url('home4.png') no-repeat center center fixed;
+  background: url('candidate3.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -281,6 +281,11 @@ transition: 0.3s;
       gap: 12px;
       margin-bottom: 15px;
     }
+	.hero p {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
 
     .hero-logo {
       width: 100px;
@@ -348,7 +353,9 @@ transition: 0.3s;
 /* Text */
 .text-content {
   flex: 1;
-  text-align: left;
+  max-width: 500px;   /* controls how wide the text can go */
+  margin: 0 auto;     /* centers it horizontally */
+  text-align: center; /* centers the text */
 }
 
 .text-content h1 {
@@ -375,6 +382,35 @@ transition: 0.3s;
     text-align: center;
   }
 }
+@media (max-width: 600px) {
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-actions .search-bar {
+    width: 90%;
+    max-width: 320px;
+  }
+
+}
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 100px; /* pushes content below header */
+  }
+}
+.logomo {
+  width: 200px;        /* adjust size */
+  height: 80px;
+  object-fit: contain;
+}
   </style>
 </head>
 
@@ -385,12 +421,12 @@ transition: 0.3s;
 <nav class="nav">
 
 <div class="logo">
-<span class="logo-text">ICTechGuide</span>
+<img src="logomo.jpg" alt="ICTechGuide Logo" class="logomo">
 </div>
 
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
-<li><a href="#about">About Us</a></li>
+<li><a href="about.html">About Us</a></li>
 </ul>
 <div class="nav-actions">
 
@@ -413,6 +449,10 @@ transition: 0.3s;
   <br>
   <br>
   <br>
+  <br>
+  <br>
+  <br>
+  
   
 
  <section class="hero">
@@ -423,6 +463,11 @@ transition: 0.3s;
 
   <p>Wooclap is an interactive learning platform that allows presenters to engage their audience through real-time questions and activities. It enables teachers, students, and speakers to create interactive presentations using features such as multiple-choice questions, word clouds, polls, open-ended questions, and quizzes.
   </p>
+  <br>
+	 <p>
+<strong>Top Features:</strong>
+Real-time polls, quizzes, and word clouds (instant results on screen), Live Q&A and audience reactions (emoji, comments), Professional templates + AI-assisted content, Easy access via code, link, or QR (no app needed), Data visualization (graphs, charts, insights)
+</p>
 
   <section class="content-section">
   <div class="content-row">
